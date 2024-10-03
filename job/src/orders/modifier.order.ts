@@ -22,7 +22,13 @@ function getAll(getFunction) {
       }
 
       if (id) {
-        where = where ? `id < "${id}" and (${where})` : `id < "${id}"`;
+        where = where 
+          ? `id < "${id}" and (${where}) and orderState="Complete"` 
+          : `id < "${id}" and orderState="Complete"`;
+      } else {
+        where = where 
+          ? `(${where}) and orderState="Complete"` 
+          : `orderState="Complete"`;
       }
 
       sort = sort ? [`id desc`, ...sort] : 'id desc';

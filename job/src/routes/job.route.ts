@@ -1,6 +1,6 @@
 import { Router } from 'express';
 
-import { post } from '../controllers/job.controller';
+import { post } from '../controllers/job.custom';
 
 // Create the router for our app
 const jobRouter: Router = Router();
